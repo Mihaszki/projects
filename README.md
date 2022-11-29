@@ -1,5 +1,5 @@
 # About
-A simple portfolio website created with Tailwind CSS.
+A simple portfolio website created with Tailwind CSS. [https://mihaszki.github.io/projects/](https://mihaszki.github.io/projects/)
 
 ## Setup
 * Install `npm install`
