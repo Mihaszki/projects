@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage)) {document.documentElement.classList.add('dark');}
+    else {document.documentElement.classList.remove('dark');}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -13,11 +17,29 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 </head>
 
-<body class="bg-zinc-900">
-  <nav id="nav" class="drop-shadow-md fixed z-50 w-full mx-auto p-1">
-    <div class="flex md:pl-6 pl-5 md:space-x-6 space-x-10">
-      <a href="#projects" class="transition ease-in-out hover:text-blue-500 px-2 py-1 block">Projects</a>
-      <a href="#skills" class="transition ease-in-out hover:text-blue-500 px-2 py-1 block">Skills</a>
+<body class="dark:bg-zinc-900 dark:text-slate-50 text-zinc-900 bg-gray-100">
+  <nav id="nav" class="dark:drop-shadow-md drop-shadow-sm fixed z-50 w-full mx-auto p-1">
+    <div class="flex items-center justify-between">
+      <div class="flex md:pl-6 pl-5 md:space-x-6 space-x-10">
+        <a href="#projects" class="transition ease-in-out hover:text-blue-500 px-2 py-1 block">Projects</a>
+        <a href="#skills" class="transition ease-in-out hover:text-blue-500 px-2 py-1 block">Skills</a>
+      </div>
+      <div>
+        <button id="theme-toggle" type="button"
+          class="text-gray-500 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-zinc-700 outline-none rounded-lg text-sm p-2.5">
+          <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+          <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              fill-rule="evenodd" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+
+      </div>
     </div>
   </nav>
   <div id="particles-js">
@@ -42,7 +64,9 @@
   </div>
 
   <div class="py-3" id="projects">
-    <h2 class="mt-8 md:text-5xl text-4xl w-fit pb-1 mx-auto uppercase underline-effect drop-shadow-lg">My Projects</h2>
+    <h2
+      class="mt-8 md:text-5xl text-4xl w-fit pb-1 mx-auto uppercase underline-effect drop-shadow-sm dark:drop-shadow-lg">
+      My Projects</h2>
     <div class="project-section">
       <div class="img-div">
         <img src="https://github.com/Mihaszki/private-notes-app/raw/master/demo/demo.gif" alt="Private Notes App"
@@ -119,9 +143,9 @@
   </div>
 
   <div class="py-3" id="skills">
-    <h2 class="md:mt-16 mt-8 md:text-5xl text-4xl w-fit	pb-1 mx-auto uppercase underline-effect drop-shadow-lg">
-      My Skills
-    </h2>
+    <h2
+      class="md:mt-16 mt-8 md:text-5xl text-4xl w-fit	pb-1 mx-auto uppercase underline-effect drop-shadow-sm dark:drop-shadow-lg">
+      My Skills</h2>
     <div class="grid md:grid-rows-4 grid-rows-5 justify-evenly grid-flow-col gap-6 md:mt-16 mt-8 mx-4 md:mx-20">
       <img class="w-20 h-20 block drop-shadow-lg"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain-wordmark.svg" alt="angular">
@@ -172,8 +196,8 @@
     </div>
   </div>
 
-  <footer class="mt-32 p-4 shadow md:flex md:items-center md:justify-between md:p-6 bg-zinc-800">
-    <ul class="flex flex-wrap items-center mt-3 text-sm mx-auto text-gray-400 sm:mt-0">
+  <footer class="mt-20 p-4 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-zinc-800 bg-slate-200">
+    <ul class="flex flex-wrap items-center mt-3 text-sm mx-auto dark:text-gray-400 text-gray-800 sm:mt-0">
       <li>
         <a href="https://github.com/Mihaszki/projects" target="blank" class="mr-4 hover:underline md:mr-6 ">Source
           Code</a>

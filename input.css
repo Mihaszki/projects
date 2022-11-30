@@ -4,7 +4,6 @@
 
 @layer base {
   html {
-    @apply text-slate-50;
     font-family: 'Montserrat', sans-serif;
   }
 }
@@ -15,7 +14,7 @@
   }
 
   .project-section {
-    @apply flex flex-col md:flex-row justify-center items-center mx-4 md:mx-20 md:mt-16 mt-8 md:border-b-0 md:pb-0 border-zinc-800 pb-8 border-b-2;
+    @apply flex flex-col md:flex-row justify-center items-center mx-4 md:mx-20 md:mt-16 mt-8 md:border-b-0 md:pb-0 dark:border-zinc-800 border-gray-300 pb-8 border-b-2;
   }
 
   .img-div {
@@ -70,7 +69,6 @@ canvas {
   background-repeat: round;
   background-position: 0em;
   filter: brightness(0) saturate(100%) invert(43%) sepia(96%) saturate(2210%) hue-rotate(202deg) brightness(97%) contrast(99%);
-
 }
 
 .particles-js-text {
@@ -90,6 +88,10 @@ body {
 }
 
 .scrolled {
+  background: rgb(243, 244, 246);
+}
+
+.dark .scrolled {
   background: rgb(24, 24, 27);
 }
 
@@ -97,30 +99,37 @@ body {
   transition: 0.5s background;
 }
 
-.svg-white {
+.dark .svg-white {
   filter: invert(98%) sepia(0%) saturate(1%) hue-rotate(103deg) brightness(108%) contrast(101%);
 }
 
 /* ===== Scrollbar CSS ===== */
-/* Firefox */
 * {
   scrollbar-width: auto;
-  scrollbar-color: #3b82f6 #18181b;
+  scrollbar-color: #3b82f6 rgb(243, 244, 246);
 }
 
-/* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 10px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #18181b;
+  background: rgb(243, 244, 246);
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #3b82f6;
   border-radius: 10px;
   border: 3px solid #3b82f6;
+}
+
+.dark * {
+  scrollbar-width: auto;
+  scrollbar-color: #3b82f6 #18181b;
+}
+
+.dark *::-webkit-scrollbar-track {
+  background: #18181b;
 }
 
 .animate-wave {
