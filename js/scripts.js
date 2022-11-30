@@ -132,3 +132,39 @@ function fadeIn() {
   }
 }
 fadeIn();
+
+const textList = ['I like Angular', 'TypeScript is cool', 'I can center a div', 'npm install is-odd', 'alert(\'Hello World\');', 'I\'m a programmer'];
+const textDesc = document.querySelector('#text-desc');
+let textListI = 0;
+
+function changeText() {
+  setTimeout(() => {
+    let animation = textDesc.animate([
+      { transform: 'translateY(0px)', opacity: '1' },
+      { transform: 'translateY(1px)', opacity: '0.9' },
+      { transform: 'translateY(4px)', opacity: '0.7' },
+      { transform: 'translateY(9px)', opacity: '0.5' },
+      { transform: 'translateY(14px)', opacity: '0.3' }
+    ], {
+      duration: 500,
+    });
+    animation.onfinish = function () {
+      textDesc.innerText = textList[textListI];
+      textListI++;
+      if (textListI > textList.length - 1) {
+        textListI = 0;
+      }
+      textDesc.animate([
+        { transform: 'translateY(14px)', opacity: '0.3' },
+        { transform: 'translateY(9px)', opacity: '0.5' },
+        { transform: 'translateY(4px)', opacity: '0.7' },
+        { transform: 'translateY(1px)', opacity: '0.9' },
+        { transform: 'translateY(0px)', opacity: '1' }
+      ], {
+        duration: 500,
+      });
+      changeText();
+    };
+  }, 2000);
+}
+changeText();

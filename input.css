@@ -83,15 +83,14 @@ canvas {
   position: absolute;
 }
 
-html {
+html,
+body {
   scroll-behavior: smooth;
   overflow-x: hidden;
-
 }
 
 .scrolled {
-  background: #d2d2d2;
-  background-color: rgb(24, 24, 27);
+  background: rgb(24, 24, 27);
 }
 
 #nav {
@@ -165,12 +164,17 @@ html {
   opacity: 0;
 }
 
-.bottom-right.inView {
+.inView {
   opacity: 1;
   transform: translateY(0px) rotate(0deg) translateZ(0);
 }
 
-.inView {
-  opacity: 1;
-  transform: translateY(0px) rotate(0deg) translateZ(0);
+@media only screen and (max-width: 825px) {
+  .scrollview {
+    transform: translateY(50px) rotate(0deg) translateZ(0);
+  }
+
+  .inView {
+    transform: translateY(0px) rotate(0deg) translateZ(0);
+  }
 }
