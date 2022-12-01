@@ -1,63 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
-    if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage)) {document.documentElement.classList.add('dark');}
-    else {document.documentElement.classList.remove('dark');}
+    if (
+      localStorage.getItem("color-theme") === "dark" ||
+      !("color-theme" in localStorage)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
   <title>My Projects</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">  
+  <meta name="theme-color" content="#18181b">
 </head>
 
-<body class="dark:bg-zinc-900 dark:text-slate-50 text-zinc-900 bg-gray-100">
-  <nav id="nav" class="dark:drop-shadow-md drop-shadow-sm fixed z-50 w-full mx-auto p-1">
+<body class="bg-gray-100 text-zinc-900 dark:bg-zinc-900 dark:text-slate-50">
+  <nav id="nav" class="fixed z-50 mx-auto w-full p-1 drop-shadow-sm dark:drop-shadow-md">
     <div class="flex items-center justify-between">
-      <div class="flex md:pl-6 pl-5 md:space-x-6 space-x-10">
-        <a href="#projects" class="transition ease-in-out hover:text-blue-500 px-2 py-1 block">Projects</a>
-        <a href="#skills" class="transition ease-in-out hover:text-blue-500 px-2 py-1 block">Skills</a>
+      <div class="flex space-x-10 pl-5 md:space-x-6 md:pl-6">
+        <a href="#projects" class="block px-2 py-1 transition ease-in-out hover:text-blue-500">Projects</a>
+        <a href="#skills" class="block px-2 py-1 transition ease-in-out hover:text-blue-500">Skills</a>
       </div>
       <div>
         <button id="theme-toggle" aria-label="toggle theme" type="button"
-          class="text-gray-500 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-zinc-700 outline-none rounded-lg text-sm p-2.5">
-          <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+          class="rounded-lg p-2.5 text-sm text-gray-500 outline-none hover:bg-gray-100 dark:text-gray-100 dark:hover:bg-zinc-700">
+          <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
           </svg>
-          <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+          <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
             <path
               d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
               fill-rule="evenodd" clip-rule="evenodd"></path>
           </svg>
         </button>
-
       </div>
     </div>
   </nav>
   <div id="particles-js">
     <div class="particles-js-text">
-      <h1 class="sm:text-4xl md:text-5xl text-2xl text-center mx-4">
+      <h1 class="mx-4 text-center text-2xl sm:text-4xl md:text-5xl">
         <div class="text-center">
-          <span class="inline-block animate-wave origin-bottom-right" aria-label="Waving" role="img">👋</span>
+          <span class="animate-wave inline-block origin-bottom-right" aria-label="Waving" role="img">👋</span>
           Hello, I'm <span class="text-blue-500">Paweł</span>
         </div>
         <div id="text-desc" class="mt-4 text-center">I'm a programmer</div>
       </h1>
       <a href="#projects"
-        class="text-center text-blue-500 hover:text-blue-400 drop-shadow-md transition ease-in-out inline-block" aria-label="Projects">
+        class="inline-block text-center text-blue-500 drop-shadow-md transition ease-in-out hover:text-blue-400"
+        aria-label="Projects">
         <svg xmlns="http://www.w3.org/2000/svg"
-          class="mt-10 inline-block mx-auto md:w-20 md:h-20 w-14 h-14 animate-bounce" fill="none" viewBox="0 0 24 24"
+          class="mx-auto mt-10 inline-block h-14 w-14 animate-bounce md:h-20 md:w-20" fill="none" viewBox="0 0 24 24"
           stroke-width="1.5" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round"
-            d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
         </svg>
       </a>
     </div>
@@ -65,167 +76,189 @@
 
   <div class="py-3" id="projects">
     <h2
-      class="mt-8 md:text-5xl text-4xl w-fit pb-1 mx-auto uppercase underline-effect drop-shadow-sm dark:drop-shadow-lg">
-      My Projects</h2>
+      class="underline-effect mx-auto mt-8 w-fit pb-1 text-4xl uppercase drop-shadow-sm dark:drop-shadow-lg md:text-5xl">
+      My Projects
+    </h2>
     <div class="project-section">
       <div class="img-div">
-        <video class="rounded-xl block h-full w-full" autoplay loop muted playsinline disablePictureInPicture>
+        <video class="block h-full w-full rounded-xl" autoplay loop muted playsinline disablePictureInPicture>
           <source src="video/demo1.webm" type="video/webm">
           <source src="video/demo1.mp4" type="video/mp4">
         </video>
       </div>
       <div class="text-div">
-        <h3 class="text-2xl mb-4 font-semibold">Private Notes App</h3>
-        <p>App designed to save and edit your private notes. Created with Angular 11, Express.js and MongoDB.
-          Authentication is based on JSON Web Token.</p>
+        <h3 class="mb-4 text-2xl font-semibold">Private Notes App</h3>
+        <p>
+          App designed to save and edit your private notes. Created with
+          Angular 11, Express.js and MongoDB. Authentication is based on JSON
+          Web Token.
+        </p>
         <a href="https://github.com/Mihaszki/private-notes-app" target="blank" class="btn-git">Read More</a>
       </div>
     </div>
 
     <div class="project-section">
       <div class="img-div">
-        <video class="rounded-xl block h-full w-full" autoplay loop muted playsinline disablePictureInPicture>
+        <video class="block h-full w-full rounded-xl" autoplay loop muted playsinline disablePictureInPicture>
           <source src="video/demo2.webm" type="video/webm">
           <source src="video/demo2.mp4" type="video/mp4">
         </video>
       </div>
       <div class="text-div">
-        <h3 class="text-2xl mb-4 font-semibold">Vitek Bot</h3>
-        <p>Vitek is a discord bot created for entertainment and statistical purposes. It uses Node.js, Discord.js
-          library and MongoDB. Works with slash commands.</p>
+        <h3 class="mb-4 text-2xl font-semibold">Vitek Bot</h3>
+        <p>
+          Vitek is a discord bot created for entertainment and statistical
+          purposes. It uses Node.js, Discord.js library and MongoDB. Works
+          with slash commands.
+        </p>
         <a href="https://github.com/Mihaszki/vitek-discord-bot" target="blank" class="btn-git">Read More</a>
       </div>
     </div>
 
     <div class="project-section">
       <div class="img-div">
-        <video class="rounded-xl block h-full w-full" autoplay loop muted playsinline disablePictureInPicture>
+        <video class="block h-full w-full rounded-xl" autoplay loop muted playsinline disablePictureInPicture>
           <source src="video/demo3.webm" type="video/webm">
           <source src="video/demo3.mp4" type="video/mp4">
         </video>
       </div>
       <div class="text-div">
-        <h3 class="text-2xl mb-4 font-semibold">Landing Page</h3>
-        <p>Responsive landing page for an imaginary company. Created with HTML, CSS and JavaScript.</p>
+        <h3 class="mb-4 text-2xl font-semibold">Landing Page</h3>
+        <p>
+          Responsive landing page for an imaginary company. Created with HTML,
+          CSS and JavaScript.
+        </p>
         <a href="https://github.com/Mihaszki/Landing-Page-Template" target="blank" class="btn-git">Read More</a>
       </div>
     </div>
 
     <div class="project-section">
       <div class="img-div">
-        <video class="rounded-xl block h-full w-full" autoplay loop muted playsinline disablePictureInPicture>
+        <video class="block h-full w-full rounded-xl" autoplay loop muted playsinline disablePictureInPicture>
           <source src="video/demo4.webm" type="video/webm">
           <source src="video/demo4.mp4" type="video/mp4">
         </video>
       </div>
       <div class="text-div">
-        <h3 class="text-2xl mb-4 font-semibold">Ascii Painter</h3>
-        <p>App created to draw your own ASCII arts with different colors and characters, the colors are generated by
-          using ANSI escape codes. Created with HTML, CSS and JavaScript.</p>
+        <h3 class="mb-4 text-2xl font-semibold">Ascii Painter</h3>
+        <p>
+          App created to draw your own ASCII arts with different colors and
+          characters, the colors are generated by using ANSI escape codes.
+          Created with HTML, CSS and JavaScript.
+        </p>
         <a href="https://github.com/Mihaszki/AsciiPainter" target="blank" class="btn-git">Read More</a>
       </div>
     </div>
 
     <div class="project-section">
       <div class="img-div">
-        <video class="rounded-xl block h-full w-full" autoplay loop muted playsinline disablePictureInPicture>
+        <video class="block h-full w-full rounded-xl" autoplay loop muted playsinline disablePictureInPicture>
           <source src="video/demo5.webm" type="video/webm">
           <source src="video/demo5.mp4" type="video/mp4">
         </video>
       </div>
       <div class="text-div">
-        <h3 class="text-2xl mb-4 font-semibold">Movie Matcher</h3>
-        <p>App created to find matching movies and actors. Created with Angular 12, Express.js and The Movie Database
-          API.</p>
+        <h3 class="mb-4 text-2xl font-semibold">Movie Matcher</h3>
+        <p>
+          App created to find matching movies and actors. Created with Angular
+          12, Express.js and The Movie Database API.
+        </p>
         <a href="https://github.com/Mihaszki/movie-actors-matcher" target="blank" class="btn-git">Read More</a>
       </div>
     </div>
 
     <div class="project-section">
       <div class="img-div">
-        <video class="rounded-xl block h-full w-full" autoplay loop muted playsinline disablePictureInPicture>
+        <video class="block h-full w-full rounded-xl" autoplay loop muted playsinline disablePictureInPicture>
           <source src="video/demo6.webm" type="video/webm">
           <source src="video/demo6.mp4" type="video/mp4">
         </video>
       </div>
       <div class="text-div">
-        <h3 class="text-2xl mb-4 font-semibold">Gravitation</h3>
-        <p>This is a game where you can manipulate your gravity. You can easily add new levels. Created in C#.</p>
+        <h3 class="mb-4 text-2xl font-semibold">Gravitation</h3>
+        <p>
+          This is a game where you can manipulate your gravity. You can easily
+          add new levels. Created in C#.
+        </p>
         <a href="https://github.com/Mihaszki/Gravitation" target="blank" class="btn-git">Read More</a>
       </div>
     </div>
 
     <div class="project-section">
       <div class="img-div">
-        <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="Github"
-          class="bg-white svg-white rounded-xl block h-full w-full">
+        <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+          alt="Github" class="svg-white block h-full w-full rounded-xl bg-white">
       </div>
       <div class="text-div">
-        <h3 class="text-2xl mb-4 font-semibold">More Projects</h3>
-        <p>You can view more projects on my <a class="underline hover:text-blue-500" href="https://github.com/Mihaszki"
-            target="blank">Github</a>.</p>
+        <h3 class="mb-4 text-2xl font-semibold">More Projects</h3>
+        <p>
+          You can view more projects on my
+          <a class="underline hover:text-blue-500" href="https://github.com/Mihaszki" target="blank">Github</a>.
+        </p>
       </div>
     </div>
   </div>
 
   <div class="py-3" id="skills">
     <h2
-      class="md:mt-16 mt-8 md:text-5xl text-4xl w-fit	pb-1 mx-auto uppercase underline-effect drop-shadow-sm dark:drop-shadow-lg">
-      My Skills</h2>
-    <div class="grid md:grid-rows-4 grid-rows-5 justify-evenly grid-flow-col gap-6 md:mt-16 mt-8 mx-4 md:mx-20">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      class="underline-effect mx-auto mt-8 w-fit pb-1 text-4xl uppercase drop-shadow-sm dark:drop-shadow-lg md:mt-16 md:text-5xl">
+      My Skills
+    </h2>
+    <div class="mx-4 mt-8 grid grid-flow-col grid-rows-5 justify-evenly gap-6 md:mx-20 md:mt-16 md:grid-rows-4">
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain-wordmark.svg" alt="angular">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original-wordmark.svg"
         alt="bootstrap">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg" src="https://www.chartjs.org/media/logo-title.svg" alt="chartjs"></a>
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg" src="https://www.chartjs.org/media/logo-title.svg"
+        alt="chartjs">
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" alt="css3">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg svg-white"
+      <img loading="lazy" class="svg-white block h-20 w-20 drop-shadow-lg"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" alt="express">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" alt="html5">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg" alt="ionic">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
         alt="javascript">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg"
         alt="mongodb">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain-wordmark.svg" alt="nodejs">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
         alt="react">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg svg-white"
+      <img loading="lazy" class="svg-white block h-20 w-20 drop-shadow-lg"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg"
         alt="tailwind">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
         alt="typescript">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="linux">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="vs code">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="docker">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg svg-white"
+      <img loading="lazy" class="svg-white block h-20 w-20 drop-shadow-lg"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/discordjs/discordjs-plain-wordmark.svg"
         alt="discord.js">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain-wordmark.svg" alt="git">
-      <img loading="lazy" class="w-20 h-20 block drop-shadow-lg"
+      <img loading="lazy" class="block h-20 w-20 drop-shadow-lg"
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gimp/gimp-original.svg" alt="gimp">
     </div>
   </div>
 
-  <footer class="mt-20 p-4 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-zinc-800 bg-slate-200">
-    <ul class="flex flex-wrap items-center mt-3 text-sm mx-auto dark:text-gray-400 text-gray-800 sm:mt-0">
+  <footer class="mt-20 bg-slate-200 p-4 shadow dark:bg-zinc-800 md:flex md:items-center md:justify-between md:p-6">
+    <ul class="mx-auto mt-3 flex flex-wrap items-center text-sm text-gray-800 dark:text-gray-400 sm:mt-0">
       <li>
-        <a href="https://github.com/Mihaszki/projects" target="blank" class="mr-4 hover:underline md:mr-6 ">Source
+        <a href="https://github.com/Mihaszki/projects" target="blank" class="mr-4 hover:underline md:mr-6">Source
           Code</a>
       </li>
     </ul>
