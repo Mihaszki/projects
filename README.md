@@ -8,4 +8,3 @@ A simple portfolio website created with Tailwind CSS. [https://mihaszki.github.i
 npm run build
 npm run watch
 ```
-* Run http server `npx http-server`
