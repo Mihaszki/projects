@@ -1032,7 +1032,7 @@ body {
 }
 
 .dark .svg-white {
-  filter: invert(98%) sepia(0%) saturate(1%) hue-rotate(103deg) brightness(108%) contrast(101%);
+  filter: invert(98%) sepia(0%) saturate(1%) hue-rotate(103deg) brightness(108%) contrast(101%) !important;
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -1172,6 +1172,11 @@ body {
 
 .dark .dark\:drop-shadow-lg {
   --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.dark .dark\:drop-shadow-none {
+  --tw-drop-shadow: drop-shadow(0 0 #0000);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
